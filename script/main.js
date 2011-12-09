@@ -1,9 +1,9 @@
-				
-	$(document).ready(function() 
+
+	$(document).ready(function()
 	{
 		$('.cascade').casadeLanding();
-					
-		$.getJSON('http://twitter.com/statuses/user_timeline.json?screen_name=quanticalabs&count=5&callback=?', function(data) 
+
+		$.getJSON('http://twitter.com/statuses/user_timeline.json?screen_name=jpemberthy&count=5&callback=?', function(data)
 		{
 			if(data.length)
 			{
@@ -12,9 +12,9 @@
 				{
 					list.append($('<li>').append($('<p>').html(linkify(value.text))));
 				});
-						
+
 				$('#latest-tweets').append(list);
-					
+
 				list.bxSlider(
 				{
 					auto: true,
@@ -23,8 +23,8 @@
 					prevText:null,
 					displaySlideQty:1,
 				   pause:5000
-				});  
-				
+				});
+
 				$('#latest-tweets a').attr('target','_blank');
 			}
 		});
