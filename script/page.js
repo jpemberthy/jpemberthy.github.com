@@ -1,9 +1,3 @@
-$('.fancybox').fancybox({
-  'titlePosition': "over"
-});
-
-$('.fancybox img').captify();
-
 $('.gallery-list').hover(
  function() {},
  function()
