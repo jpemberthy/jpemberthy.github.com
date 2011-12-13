@@ -138,7 +138,7 @@
 			{
 				width:197px;
 				height:130px;
-				margin-bottom:5px
+				margin-bottom:5px;
 			}
 
 				div.green ul.gallery-list li.left,
@@ -157,6 +157,16 @@
 				{
 					float:right;
 				}
+
+				div.green ul.gallery-list li {
+				  margin-bottom: 50px;
+				}
+
+			div.green li h5 {
+			  margin-bottom: 5px;
+			  color: #8BB300;
+			  font-size:15px;
+			}
 
 	/*****************************************************************/
 	/* Yellow  																		  */
