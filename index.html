@@ -1,167 +1,205 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Pemberthy</title>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <style>
+    :root {
+      --bg-color: #1a1a1a;
+      --text-color: #e0e0e0;
+      --text-muted: #999;
+      --accent-color: #F7931A;
+      --accent-hover: #ff9d2e;
+    }
 
-  <head>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>Juan E. Pemberthy</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn 0.8s ease-in;
+    }
 
-    <link rel="stylesheet" type="text/css" href="style/nivo-slider.css"/>
-    <link rel="stylesheet" type="text/css" href="style/jquery.qtip.css"/>
-    <link rel="stylesheet" type="text/css" href="style/jquery.captify.css"/>
-    <link rel="stylesheet" type="text/css" href="style/jquery.jScrollPane.css"/>
-    <link rel="stylesheet" type="text/css" href="style/fancybox/jquery.fancybox.css"/>
-    <link rel="stylesheet" type="text/css" href="style/base.css"/>
-    <link rel="stylesheet" type="text/css" href="style/page.css"/>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300"/>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
-    <script type="text/javascript" src="script/jquery.min.js"></script>
-    <script type="text/javascript" src="script/linkify.js"></script>
-    <script type="text/javascript" src="script/jquery.easing.js"></script>
-    <script type="text/javascript" src="script/jquery.captify.js"></script>
-    <script type="text/javascript" src="script/jquery.blockUI.js"></script>
-    <script type="text/javascript" src="script/jquery.bxSlider.js"></script>
-    <script type="text/javascript" src="script/jquery.qtip.min.js"></script>
-    <script type="text/javascript" src="script/jquery.mousewheel.js"></script>
-    <script type="text/javascript" src="script/jquery.jScrollPane.js"></script>
-    <script type="text/javascript" src="script/jquery.nivo.slider.js"></script>
+    .container {
+      max-width: 600px;
+      text-align: center;
+    }
 
-    <script type="text/javascript" src="script/script.js"></script>
-    <script type="text/javascript" src="script/jquery.cascadeLanding.js"></script>
-    <script type="text/javascript" src="script/main.js"></script>
-    <script type="text/javascript" src="plugin/contact-form/contact-form.js"></script>
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      display: inline-block;
+    }
 
-    <script type="text/javascript">
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    }
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-1499746-6']);
-      _gaq.push(['_trackPageview']);
+    .subtitle {
+      font-size: 1.125rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
 
-      (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+    .bio {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      color: var(--text-color);
+    }
 
-    </script>
-  </head>
+    .bio strong {
+      font-weight: 600;
+      color: #fff;
+    }
 
-  <body>
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
 
-    <!-- Header -->
-    <div class="header main box-center">
+    .link-item {
+      display: block;
+      padding: 0.875rem 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+    }
 
-      <div class="layout-50 clear-fix overflow-fix">
+    .link-item:hover {
+      background: rgba(247, 147, 26, 0.1);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
 
-        <div class="layout-50-left">
-          <h1>Juan Pemberthy</h1>
-          <h5>Software Engineer at GitHub.</h5>
-        </div>
+    .link-item .emoji {
+      margin-right: 0.5rem;
+    }
 
-        <div class="layout-50-right">
-          <ul class="no-list header-menu">
-            <li class="header-menu-mail">
-              <a href="mailto:juan@pemberthy.com">juan@pemberthy.com</a>
-            </li>
-          </ul>
-        </div>
+    footer {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+    }
 
-      </div>
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      margin: 0 0.25rem;
+    }
 
+    footer a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .bio {
+        font-size: 1rem;
+      }
+
+      .link-item {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
+      }
+
+      footer {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Juan Pemberthy</h1>
+
+    <p class="subtitle">Building software, writing, and reflections around markets and technology.</p>
+
+    <p class="bio">
+      I've been building software for a while now.
+      Previously at <strong>GitHub</strong>, <strong>Uber</strong>, and <strong>WeHeartIt</strong> — now at <strong>Convergint</strong>.
+      In my free time, I write and operate <strong>Gigantes Research</strong>, exploring markets, strategy, and conviction.
+    </p>
+
+    <div class="links">
+      <a href="https://gigantesorg.substack.com" class="link-item" target="_blank" rel="noopener noreferrer">
+        <span class="emoji">📰</span> Gigantes Research
+      </a>
+      <a href="https://app.losgigantes.org/newsletter" class="link-item" target="_blank" rel="noopener noreferrer">
+        <span class="emoji">📜</span> Newsletter Archive
+      </a>
+      <a href="https://losgigantes.org" class="link-item" target="_blank" rel="noopener noreferrer">
+        <span class="emoji">🌐</span> LosGigantes.org
+      </a>
     </div>
-    <!-- /Header -->
 
-
-    <!-- Content -->
-    <div class="content main box-center">
-
-      <!-- Cascade -->
-      <div class="cascade">
-
-        <!-- Box menu -->
-        <ul class="cascade-menu overflow-fix">
-          <li class="blue" id="blue.html">
-            <h3>About</h3>
-            <span>About Me</span>
-          </li>
-          <!-- <li class="green" id="green.html">
-               <h3>Portfolio</h3>
-               <span>Definitely Not Recent Work</span>
-          </li> -->
-          <li class="yellow" id="yellow.html">
-            <h3>Resume</h3>
-            <span>Personal Profile</span>
-          </li>
-          <li class="orange" id="orange.html">
-            <h3>Not Safe</h3>
-            <span>NSFW</span>
-          </li>
-        </ul>
-        <!-- /Box menu -->
-
-        <!-- Window -->
-        <div class="cascade-window">
-
-          <!-- Close bar -->
-          <div class="cascade-window-close-bar">
-            <a href="#"></a>
-          </div>
-          <!-- /Close bar -->
-
-          <!-- Page content -->
-          <div class="cascade-window-content"></div>
-          <!-- /Page content -->
-
-          <!-- Footer -->
-          <div class="cascade-window-footer"></div>
-          <!-- /Footer -->
-
-        </div>
-        <!-- /Window -->
-
-        <!-- Navigation -->
-        <a href="#" class="cascade-navigation cascade-navigation-prev"></a>
-        <a href="#" class="cascade-navigation cascade-navigation-next"></a>
-        <!-- /Navigation -->
-
+    <footer>
+      <div class="footer-links">
+        <div>📫 <a href="mailto:juan@pemberthy.com">juan@pemberthy.com</a></div>
+        <div>🧭 <a href="https://x.com/jpemberthy" target="_blank" rel="noopener noreferrer">@jpemberthy</a></div>
+        <div>💻 <a href="https://github.com/jpemberthy" target="_blank" rel="noopener noreferrer">github.com/jpemberthy</a></div>
       </div>
-      <!-- /Cascade -->
-
-    </div>
-    <!-- /Content -->
-
-
-    <!-- Footer -->
-    <div class="footer">
-
-      <hr class="footer-line" />
-
-      <div class="main box-center layout-7030 clear-fix overflow-fix">
-
-        <!-- Latest tweets -->
-        <div class="layout-7030-left latest-tweets">
-          <div id="latest-tweets"></div>
-        </div>
-        <!-- /Latest tweets -->
-
-        <!-- Social icons -->
-        <div class="layout-7030-right">
-
-          <ul class="no-list social-list">
-            <!-- <li>Connect</li>
-                 <li><a href="https://twitter.com/#!/jpemberthy/" class="social-twitter"></a></li>
-            <li><a href="https://twitter.com/#!/jpemberthy/"</a>
-                   <img src="image/social_github_mini.png"></img>
-          </li> -->
-        </ul>
-      </div>
-      <!-- /Social icons -->
-
-    </div>
-
+    </footer>
   </div>
-  <!-- /Footer -->
-
 </body>
 </html>
