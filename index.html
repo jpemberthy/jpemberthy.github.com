@@ -4,14 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juan Pemberthy</title>
+  <meta name="description" content="Juan Pemberthy, Founder of Kova and writer of Gigantes Research.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-color: #1a1a1a;
-      --text-color: #e0e0e0;
-      --text-muted: #999;
-      --accent-color: #F7931A;
-      --accent-hover: #ff9d2e;
+      --bg-color: #0e0c0a;
+      --bg-glow: rgba(200, 132, 58, 0.12);
+      --text-color: #e7e4dd;
+      --text-strong: #ece7da;
+      --text-muted: #8d8d93;
+      --line-color: rgba(255, 255, 255, 0.09);
+      --panel-color: rgba(255, 255, 255, 0.03);
+      --accent-color: #c8843a;
+      --accent-hover: #d9924a;
+      --kova-blue: #2f7fe0;
+      --sans: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
 
     * {
@@ -20,17 +32,26 @@
       box-sizing: border-box;
     }
 
+    html {
+      min-height: 100%;
+      background: var(--bg-color);
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
+      background:
+        radial-gradient(circle at 50% 0%, var(--bg-glow), transparent 30rem),
+        var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--sans);
+      line-height: 1.6;
       animation: fadeIn 0.8s ease-in;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     @keyframes fadeIn {
@@ -43,17 +64,19 @@
     }
 
     .container {
-      max-width: 600px;
+      width: min(100%, 640px);
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
-      font-weight: 300;
-      margin-bottom: 1rem;
-      letter-spacing: 0.02em;
-      position: relative;
       display: inline-block;
+      position: relative;
+      margin-bottom: 1rem;
+      color: var(--text-strong);
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.1;
     }
 
     h1::after {
@@ -61,30 +84,30 @@
       position: absolute;
       bottom: -8px;
       left: 50%;
-      transform: translateX(-50%);
       width: 60px;
       height: 2px;
+      transform: translateX(-50%);
       background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
     }
 
     .subtitle {
+      margin-bottom: 2.5rem;
+      color: var(--text-muted);
       font-size: 1.125rem;
       font-style: italic;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .bio {
-      font-size: 1.0625rem;
-      line-height: 1.8;
       margin-bottom: 3rem;
       color: var(--text-color);
+      font-size: 1.0625rem;
+      line-height: 1.8;
     }
 
     .bio strong {
+      color: var(--text-strong);
       font-weight: 600;
-      color: #fff;
     }
 
     .links {
@@ -95,50 +118,91 @@
     }
 
     .link-item {
-      display: block;
-      padding: 0.875rem 1.5rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 4px;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1.1rem;
+      border: 1px solid var(--line-color);
+      border-radius: 6px;
+      background: var(--panel-color);
       color: var(--text-color);
+      text-align: left;
       text-decoration: none;
-      transition: all 0.2s ease;
-      font-size: 1rem;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .link-item:hover {
-      background: rgba(247, 147, 26, 0.1);
+    .link-item:hover,
+    .link-item:focus-visible {
       border-color: var(--accent-color);
+      background: rgba(200, 132, 58, 0.1);
       transform: translateY(-2px);
+      outline: none;
     }
 
-    .link-item .emoji {
-      margin-right: 0.5rem;
+    .link-item.kova:hover,
+    .link-item.kova:focus-visible {
+      border-color: rgba(47, 127, 224, 0.62);
+      background: rgba(47, 127, 224, 0.08);
     }
+
+    .link-logo {
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .link-text {
+      min-width: 0;
+      flex: 1;
+      color: var(--text-strong);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .link-label {
+      display: block;
+      margin-top: 0.12rem;
+      color: var(--accent-color);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .kova .link-label {
+      color: var(--kova-blue);
+    }
+
 
     footer {
-      font-size: 0.9375rem;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 2rem;
+      border-top: 1px solid var(--line-color);
+      color: var(--text-muted);
+      font-size: 0.9375rem;
     }
 
     footer a {
+      margin: 0 0.25rem;
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s ease;
-      margin: 0 0.25rem;
     }
 
-    footer a:hover {
+    footer a:hover,
+    footer a:focus-visible {
       color: var(--accent-color);
+      outline: none;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
       align-items: center;
+      gap: 0.5rem;
     }
 
     @media (max-width: 640px) {
@@ -150,17 +214,20 @@
         font-size: 2rem;
       }
 
-      .subtitle {
-        font-size: 1rem;
-      }
-
+      .subtitle,
       .bio {
         font-size: 1rem;
       }
 
       .link-item {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.9375rem;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0.875rem 1rem;
+      }
+
+      .link-logo {
+        flex-basis: 48px;
+        width: 48px;
       }
 
       footer {
@@ -177,27 +244,33 @@
 
     <p class="bio">
       I've been building software for a while now.
-      Previously at <strong>GitHub</strong>, <strong>Uber</strong>, and <strong>WeHeartIt</strong> — now at <strong>Convergint</strong>.
+      Previously at <strong>GitHub</strong>, <strong>Uber</strong>, and <strong>WeHeartIt</strong> - now at <strong>Convergint</strong>.
+      I'm also the <strong>Founder of Kova</strong>.
       In my free time, I write and operate <strong>Gigantes Research</strong>, exploring markets, strategy, and conviction.
     </p>
 
     <div class="links">
-      <a href="https://gigantesorg.substack.com" class="link-item" target="_blank" rel="noopener noreferrer">
-        <span class="emoji">📰</span> Gigantes Research
+      <a href="https://kovatools.com" class="link-item kova" target="_blank" rel="noopener noreferrer">
+        <img class="link-logo" src="image/brand/kova-mark.svg" alt="Kova">
+        <span class="link-text">
+          Kova
+          <span class="link-label">Visit Kova</span>
+        </span>
       </a>
-      <a href="https://app.losgigantes.org/newsletter" class="link-item" target="_blank" rel="noopener noreferrer">
-        <span class="emoji">📜</span> Newsletter Archive
-      </a>
-      <a href="https://losgigantes.org" class="link-item" target="_blank" rel="noopener noreferrer">
-        <span class="emoji">🌐</span> LosGigantes.org
+      <a href="https://gigantesresearch.com" class="link-item gigantes" target="_blank" rel="noopener noreferrer">
+        <img class="link-logo" src="image/brand/gigantes-mark.svg" alt="Gigantes Research">
+        <span class="link-text">
+          Gigantes Research
+          <span class="link-label">Visit Gigantes Research</span>
+        </span>
       </a>
     </div>
 
     <footer>
       <div class="footer-links">
-        <div>📫 <a href="mailto:juan@pemberthy.com">juan@pemberthy.com</a></div>
-        <div>🧭 <a href="https://x.com/jpemberthy" target="_blank" rel="noopener noreferrer">@jpemberthy</a></div>
-        <div>💻 <a href="https://github.com/jpemberthy" target="_blank" rel="noopener noreferrer">github.com/jpemberthy</a></div>
+        <div><a href="mailto:juan@pemberthy.com">juan@pemberthy.com</a></div>
+        <div><a href="https://x.com/jpemberthy" target="_blank" rel="noopener noreferrer">@jpemberthy</a></div>
+        <div><a href="https://github.com/jpemberthy" target="_blank" rel="noopener noreferrer">github.com/jpemberthy</a></div>
       </div>
     </footer>
   </div>
