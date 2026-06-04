@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 17 64 66">
+  <g transform="translate(2,14) scale(0.72)">
+    <rect x="9" y="9" width="82" height="82" fill="none" stroke="rgba(200,132,58,.7)" stroke-width="2"></rect>
+    <text x="50" y="51" text-anchor="middle" dominant-baseline="central" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="33" letter-spacing="-1" fill="#ece7da">GR</text>
+  </g>
+</svg>
