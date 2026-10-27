@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juan Pemberthy</title>
-  <meta name="description" content="Juan Pemberthy, Founder of Kova and writer of Gigantes Research.">
+  <meta name="description" content="Juan Pemberthy, Founder of Kova, writer of Gigantes Research, and builder of LoganWatch.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,7 @@
       --accent-color: #c8843a;
       --accent-hover: #d9924a;
       --kova-blue: #2f7fe0;
+      --logan-pink: #ec66cb;
       --sans: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
@@ -146,6 +147,12 @@
       background: rgba(47, 127, 224, 0.08);
     }
 
+    .link-item.logan:hover,
+    .link-item.logan:focus-visible {
+      border-color: rgba(236, 102, 203, 0.62);
+      background: rgba(236, 102, 203, 0.08);
+    }
+
     .link-logo {
       flex: 0 0 48px;
       width: 48px;
@@ -175,6 +182,10 @@
 
     .kova .link-label {
       color: var(--kova-blue);
+    }
+
+    .logan .link-label {
+      color: var(--logan-pink);
     }
 
 
@@ -247,6 +258,7 @@
       Previously at <strong>GitHub</strong>, <strong>Uber</strong>, and <strong>WeHeartIt</strong> - now at <strong>Convergint</strong>.
       I'm also the <strong>Founder of Kova</strong>.
       In my free time, I write and operate <strong>Gigantes Research</strong>, exploring markets, strategy, and conviction.
+      And I still build software just for fun, like <strong>LoganWatch</strong>.
     </p>
 
     <div class="links">
@@ -262,6 +274,13 @@
         <span class="link-text">
           Gigantes Research
           <span class="link-label">Visit Gigantes Research</span>
+        </span>
+      </a>
+      <a href="https://loganwatch.com" class="link-item logan" target="_blank" rel="noopener noreferrer">
+        <img class="link-logo" src="image/brand/logan-mark.svg" alt="LoganWatch">
+        <span class="link-text">
+          LoganWatch
+          <span class="link-label">Visit LoganWatch</span>
         </span>
       </a>
     </div>
